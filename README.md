@@ -1,2 +1,2 @@
-# reactKoaJs
-sample with React Koa JS
+# ReactKoaJS
+sample project to integrate React and Koa js and containerization

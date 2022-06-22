@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "http-status": "^1.5.2",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-cors": "^0.0.16",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "nodemon": "^2.0.16"
+  }
+}
