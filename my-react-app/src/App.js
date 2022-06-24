@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const appStyle = {
@@ -43,6 +43,8 @@ const submitStyle = {
   display: "block",
 };
 
+const centerStyle = {textAlign: "center"};
+
 const Field = React.forwardRef(({ label, type }, ref) => {
   return (
     <div>
@@ -77,12 +79,17 @@ const Form = ({ onSubmit }) => {
 };
 
 const App = () => {
+  const [successMessage, setSuccessMessage] = useState('');
+  let response = '';
   const handleSubmit = async (data) => {
-    const response = await axios.post("http://localhost:3000/loginAuth", data);
+    setSuccessMessage('');
+    response = await axios.post("./loginAuth", data);
+    setSuccessMessage(response?.data);
   };
   return (
-    <div style={appStyle}>
-      <Form onSubmit={handleSubmit} />
+    <div >
+      <div style={appStyle}><Form onSubmit={handleSubmit} /></div>
+      <div style={centerStyle}>{successMessage && ( <p> {successMessage} </p> )}</div>
     </div>
   );
 };
