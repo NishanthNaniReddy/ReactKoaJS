@@ -9,15 +9,14 @@ const HttpStatus = require("http-status");
 
 const app = new Koa();
 
-//These are the new change
 const static_pages = new Koa();
 
-static_pages.use(serve(__dirname + "/my-react-app/build")); //serve the build directory
+static_pages.use(serve(__dirname + "/my-react-app/build"));
 app.use(mount("/", static_pages));
 
 const PORT = 3000;
 
-app.use(BodyParser());
+app.use(BodyParser());//middleware
 app.use(Logger());
 app.use(cors());
 
